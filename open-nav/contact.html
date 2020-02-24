@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soy Juan, Desarrollador web</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:300,500&display=swap" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+
+    <script src="scripts/main.js" type="application/javascript" defer></script>
+    
+    <style type="text/css">
+        h1 {
+            font-size: 18px;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 12px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            display: block;
+            width: 100%;
+            border-radius: 3px;
+            border: solid 1px #a2a2a2;
+            padding: 12px;
+            font-size: 16px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        textarea {
+            height: 124px;
+        }
+
+        @media screen and (min-width: 768px) {
+            form p:first-child {
+                float: left;
+                width: 45%;
+            }
+
+            form p:nth-child(2) {
+                float: right;
+                width: 45%;
+            }
+
+            form p:nth-child(3) {
+                clear: both;
+            }
+        }
+    </style>
+
+    <script src="scripts/main.js" type="application/javascript"></script>
+</head>
+
+<body>
+<header class="wrapper">
+    <h2>Juan maravilloso</h2>
+    <i id="icon-open" class="material-icons">menu</i>
+    <i id="icon-close" class="material-icons">close</i>
+    <nav>
+        <ul>
+            <li><a href="index.html#about-me">Sobre mi</a></li>
+            <li><a href="index.html#skills">Habilidades</a></li>
+            <li><a>Contáctame</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="wrapper">
+    <article>
+        <section>
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+
+            <form method="GET" action="">
+                <p>
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name">
+                </p>
+                <p>
+                    <label for="email">Correo</label>
+                    <input type="email" id="email" name="email">
+                </p>
+                <p>
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message"></textarea>
+                </p>
+                <p>
+                    <button type="submit" class="button">ENVIAR</button>
+                </p>
+            </form>
+        </section>
+    </article>
+</main>
+<footer>
+    <p>© 2019 Juan maravilloso</p>
+</footer>
+</body>
+
+</html>
