@@ -1,0 +1,38 @@
+<script>
+    const obj = {
+        valueLevel1: 32,
+        objLevel1: {
+            objLevel2: 'objLevel2'
+        },
+        arrayLevel1: [1, [2, 3, 4]],
+    }
+
+    const objRef = obj;
+    const objCopy = { ...obj };
+
+    // console.log('obj', obj);
+    // console.log('objRef', objRef);
+    // console.log('objCopy', objCopy);
+
+    objRef.valueLevel1 = 'REF';
+    objRef.objLevel1.objLevel2 = 'REF';
+    objRef.arrayLevel1[1][0] = 'REF';
+
+    objCopy.valueLevel1 = 'COPY';
+    objCopy.objLevel1.objLevel2 = 'COPY';
+    objCopy.arrayLevel1[1][2] = 'COPY';
+
+    console.log('obj', obj);
+    console.log('objRef', objRef);
+    console.log('objCopy', objCopy);
+
+
+    const myArray = [1, 2, 3]
+    function changeArray(value) {
+        value[1] = 'changed by changeArray()';
+    }
+
+    changeArray(myArray);
+
+    console.log(myArray);
+</script>

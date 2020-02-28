@@ -1,0 +1,11 @@
+<script>
+    console.log('init');
+    let a = fetch('coffee.jpg');
+    let b = fetch('tea.jpg');
+
+    Promise.all([a, b]).then(values => {
+        console.log(values);
+    });
+
+    console.log('end');
+</script>

@@ -1,0 +1,13 @@
+<img src="spinner.svg">
+<script>
+    const img = document.querySelector('img');
+    setTimeout(() => {
+        fetch('sample.json')
+            .then(data => data.json())
+            .then(data => {
+                console.log(data);
+                img.remove()
+            });
+    }, 500);
+
+</script>

@@ -1,0 +1,81 @@
+<script>
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+    const materials = [
+        'Hydrogen',
+        'Helium',
+        'Lithium',
+        'Beryllium'
+    ];
+
+    // normal function
+    function mapper(material) {
+        return material.length;
+    }
+
+    const mappedMaterials = materials.map(mapper);
+
+    console.log(mappedMaterials);
+
+    // normal function simplify
+    console.log(
+        materials.map(function (material) {
+            return material.length;
+        })
+    );
+
+    // arrow function semi-simplify
+    console.log(materials.map(material => {
+        return material.length
+    }));
+
+    // arrow function simplify
+    console.log(materials.map(material => material.length));
+
+    const myFuncion = () => true;
+    console.log(myFuncion());
+
+    // Parenthesize the body of a function to return an object literal expression:
+    const myFuncionObject = () => ({ foo: 'bar' });
+    console.log(myFuncionObject());
+
+    // No separated this
+    function Person() {
+        // The Person() constructor defines `this` as an instance of itself.
+        this.age = 0;
+
+        function growUp() {
+            this.age++;
+        }
+
+        setInterval(growUp, 1000);
+    }
+
+    const p = new Person();
+
+    // No separated this - fix this
+    function Person2() {
+        var that = this;
+        that.age = 0;
+        function growUp() {
+            // The callback refers to the `that` variable of which
+            // the value is the expected object.
+            that.age++;
+        }
+
+        setInterval(growUp, 1000);
+    }
+
+    const p2 = new Person2();
+
+    function Person3() {
+        this.age = 0;
+
+        setInterval(() => {
+            this.age++; // |this| properly refers to the Person object
+        }, 1000);
+    }
+
+    const p3 = new Person3();
+
+</script>
