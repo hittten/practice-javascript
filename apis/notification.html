@@ -1,0 +1,24 @@
+<button>Enabled</button>
+<button>Send notification</button>
+<script>
+    const [enableNotificationButton, sendNotificationButton] = document.querySelectorAll('button');
+
+    console.log('current permisson', Notification.permission);
+
+    enableNotificationButton.onclick = async () => {
+        const response = await Notification.requestPermission();
+        console.log(response);
+    }
+
+    sendNotificationButton.onclick = async () => {
+        console.log('has hecho clic');
+        const img = 'firefox-icon.png';
+        const text = 'testing 1 2 3...';
+        const messageNotification = new Notification('To do list', { body: text, icon: img });
+        messageNotification.onclick = () => {
+            window.open('https://google.es');
+            messageNotification.close();
+        }
+    }
+
+</script>
