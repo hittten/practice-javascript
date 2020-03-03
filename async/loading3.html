@@ -2,7 +2,7 @@
 <script>
     const img = document.querySelector('img');
     const nativeFetch = fetch;
-    
+
     fetch = (...params) => new Promise(resolve => {
         setTimeout(() => resolve(nativeFetch(...params)), 500);
     })
