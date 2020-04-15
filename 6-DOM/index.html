@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div ul .done {
+            color: blue;
+        }
+
+        .done {
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+<h1>DOM Examples</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deserunt facilis fugiat laborum, natus quae
+    quaerat quas? Autem commodi dicta doloremque ducimus eius enim esse necessitatibus recusandae, reprehenderit
+    veritatis. Voluptatibus?</p>
+
+<p class="toRemove">other to remove</p>
+
+<div>
+    <ul>
+        <li>hello</li>
+        <li>how</li>
+        <li>are</li>
+        <li class="done">you</li>
+    </ul>
+    <p class="done">another Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci amet autem
+        eius enim harum in minima modi obcaecati pariatur placeat, quae tenetur vitae. Distinctio dolores fuga quas
+        reiciendis repellendus.
+    </p>
+</div>
+<button>click me</button>
+
+<script>
+    // querySelector
+    const titleElement = document.querySelector('h1');
+    console.log('titleElement', titleElement.textContent);
+
+    const divElement = document.querySelector('div');
+    console.log('divElement', divElement);
+
+    const ulElement = divElement.querySelector('ul');
+    console.log('ulElement', ulElement);
+
+    const pElement = divElement.querySelector('p');
+    console.log('pElement', pElement.textContent);
+
+    const lastElementOfList = document.querySelector('div ul .done');
+    console.log('lastElementOfList', lastElementOfList);
+
+    console.log('first .done', document.querySelector('.done'));
+
+    // querySelectorAll
+    const paragraphs = document.querySelectorAll('p');
+    console.log('paragraphs', paragraphs);
+
+    const liElements = document.querySelectorAll('li');
+    console.log('liElements', liElements);
+
+    console.log('all .done', document.querySelectorAll('.done'));
+
+    // createElement
+    const myParagraph = document.createElement('p');
+    myParagraph.textContent = 'hello world';
+    console.log('myParagraph', myParagraph);
+
+    // append / appendChild
+    document.body.append(myParagraph);
+    // document.body.appendChild(myParagraph);
+    // divElement.append(myParagraph);
+
+    // remove / removeChild
+    document.querySelector('.toRemove').remove();
+    // document.removeChild()
+
+    // parentElement / parentNode
+    console.log('my parent', ulElement.parentElement);
+    console.log('my parent', ulElement.parentElement.parentElement);
+
+    // addEventListener
+    const myButton = document.querySelector('button');
+    myButton.onclick = function () {
+        console.log('has hecho click');
+    };
+
+    myButton.addEventListener('click', function () {
+        console.log('has hecho click desde el event listener');
+    });
+
+    function myClick() {
+        console.log('has hecho click desde el otro event listener');
+    }
+
+    myButton.addEventListener('click', myClick);
+
+    myButton.click();
+
+    // removeEventListener
+    myButton.removeEventListener('click', myClick);
+
+</script>
+</body>
+</html>
