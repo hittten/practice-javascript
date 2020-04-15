@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // define function with return value
+    function multiply(a, b) {
+        return a * b;
+    }
+
+    // define function without return value
+    function log(text) {
+        console.log(text);
+    }
+
+    // define function without params
+    function hello() {
+        console.log('hello world');
+    }
+
+    // define function with multiple params
+    function other(p1, p2, p3) {
+        console.log(p1, p2, p3);
+    }
+
+    // define function with multiple params
+    function other2(p1, p2, p3) {
+        if (p3 === undefined) {
+            console.log(p1, p2);
+        } else {
+            console.log(p1, p2, p3);
+        }
+    }
+
+    const r1 = multiply(4, 7);
+    const r2 = multiply(20, 20);
+    const r3 = multiply(0.5, 3);
+
+    console.log(r1);
+    console.log(r2);
+    console.log(r3);
+
+    log('hello my function');
+
+    hello();
+
+    other('a','b','c');
+    other('a','b');
+
+    other2('a','b');
+</script>
+</body>
+</html>
