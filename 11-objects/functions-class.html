@@ -1,0 +1,60 @@
+<script>
+    function Person(name) {
+        this.name = name;
+        this.greeting = function () {
+            console.log('Hi! I\'m ' + this.name + '.');
+        };
+    }
+
+    const jose = new Person('Jose');
+    console.log(jose.name);
+    jose.greeting();
+
+    jose.lastName = 'ramon';
+    jose.sayHello = function() {
+        console.log('hola');
+    };
+    jose.sayHello();
+
+    console.log(jose);
+
+    class Person2 {
+        constructor(first, last, age, gender, interests) {
+            this.name = {
+                first,
+                last
+            };
+            this.age = age;
+            this.gender = gender;
+            this.interests = interests;
+        }
+
+        greeting() {
+            console.log(`Hi! I'm ${this.name.first}`);
+        };
+
+        farewell() {
+            console.log(`${this.name.first} has left the building. Bye for now!`);
+        };
+    }
+
+    const maca = new Person2('Miguel', 'CA', 20, 'male', ['a','b']);
+
+    maca.sayHello = function() {
+        console.log('hola');
+    };
+    maca.sayHello();
+
+    console.log(maca);
+
+    class Car {
+        numDoors = 4;
+
+        constructor(brand) {
+            this.brand = brand;
+        }
+    }
+
+    const myCar = new Car('xxx');
+    console.log(myCar.numDoors);
+</script>

@@ -1,0 +1,61 @@
+<script>
+    // create object instance
+    const person = {
+        name: {
+            first: 'Bob',
+            last: 'Smith'
+        },
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing'],
+        bio: function () {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        },
+        greeting: function () {
+            alert('Hi! I\'m ' + this.name[0] + '.');
+        }
+    };
+
+    // access to objects attributes and methods
+    const myAttr = 'name';
+    person.name;
+    person['name'];
+    person[myAttr];
+
+    let myDataName = 'height';
+    let myDataValue = '1.75m';
+    person[myDataName] = myDataValue;
+    person.bio();
+    person.greeting();
+
+    // creating new attributes and methods
+    person['eyes'] = 'hazel';
+    person.lastName = 'Perez';
+
+    person.farewell = function () {
+        alert("Bye everybody!");
+    };
+
+    person['españa es grande'] = 'hello';
+
+    // other instances
+    const person1 = {
+        name: 'Chris',
+        greeting: function () {
+            alert('Hi! I\'m ' + this.name + '.');
+        }
+    }
+
+    const person2 = {
+        name: 'Deepti',
+        greeting: function () {
+            alert('Hi! I\'m ' + this.name + '.');
+        }
+    }
+
+    // Methods
+    console.log('keys: ', Object.keys(person));
+    console.log('values: ', Object.values(person));
+    console.log('entries: ', Object.entries(person));
+
+</script>

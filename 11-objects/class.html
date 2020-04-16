@@ -1,0 +1,24 @@
+<script>
+    class Person {
+        constructor(name) {
+            this.name = name;
+        }
+        greeting = function () {
+            console.log('Hi! I\'m ' + this.name + '.');
+        };
+    }
+
+    const jose = new Person('Jose');
+    console.log(jose.name);
+    jose.greeting();
+
+    jose.lastName = 'ramon';
+    jose.sayHello = function() {
+        console.log('hola');
+    };
+    jose.sayHello();
+
+    console.log(jose);
+
+
+</script>
