@@ -1,0 +1,80 @@
+<script>
+    const arrayQueryResult = `[
+  {
+    "name": "Molecule Man",
+    "age": 29,
+    "secretIdentity": "Dan Jukes",
+    "powers": [
+      "Radiation resistance",
+      "Turning tiny",
+      "Radiation blast"
+    ]
+  },
+  {
+    "name": "Madame Uppercut",
+    "age": 39,
+    "secretIdentity": "Jane Wilson",
+    "powers": [
+      "Million tonne punch",
+      "Damage resistance",
+      "Superhuman reflexes"
+    ]
+  }
+]`;
+
+    console.log('arrayQueryResult', arrayQueryResult);
+    const jsonQueryResult = JSON.parse(arrayQueryResult);
+    console.log('jsonQueryResult', jsonQueryResult);
+    console.log('jsonQueryResult[0].name', jsonQueryResult[0].name);
+
+    const objectQueryResult = `{
+  "squadName": "Super hero squad",
+  "homeTown": "Metro City",
+  "formed": 2016,
+  "secretBase": "Super tower",
+  "active": true,
+  "members": [
+    {
+      "name": "Molecule Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "powers": [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
+      ]
+    },
+    {
+      "name": "Madame Uppercut",
+      "age": 39,
+      "secretIdentity": "Jane Wilson",
+      "powers": [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    },
+    {
+      "name": "Eternal Flame",
+      "age": 1000000,
+      "secretIdentity": "Unknown",
+      "powers": [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    }
+  ]
+}`;
+
+    console.log('objectQueryResult', objectQueryResult);
+    const jsonObjectQueryResult = JSON.parse(objectQueryResult);
+    console.log('jsonObjectQueryResult', jsonObjectQueryResult);
+
+    console.log('jsonObjectQueryResult.squadName', jsonObjectQueryResult.squadName);
+    console.log('jsonObjectQueryResult.homeTown', jsonObjectQueryResult.homeTown);
+    console.log('jsonObjectQueryResult.members', jsonObjectQueryResult.members);
+
+</script>

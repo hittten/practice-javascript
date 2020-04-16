@@ -1,0 +1,31 @@
+<script>
+    const instancePerson = {
+        name: {
+            first: 'Bob',
+            last: 'Smith'
+        },
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing'],
+        bio: function () {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        },
+        greeting: function () {
+            alert('Hi! I\'m ' + this.name[0] + '.');
+        }
+    };
+    console.log('instancePerson: ', instancePerson);
+    const jsonInstancePerson = JSON.stringify(instancePerson);
+    console.log('jsonInstancePerson: ', jsonInstancePerson);
+
+    const myArray = [
+        {name: 'Gil'},
+        {name: 'jose'},
+        {name: 'Maca'},
+        {name: 'Lore'},
+    ];
+
+    console.log('myArray: ', myArray);
+    const jsonArray = JSON.stringify(myArray);
+    console.log('jsonArray', jsonArray);
+</script>
