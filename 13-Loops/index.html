@@ -1,0 +1,39 @@
+<p></p>
+<script>
+    const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+    let info = 'My cats are called ';
+    const para = document.querySelector('p');
+
+    for (let i = 0; i < cats.length; i++) {
+        if (i === cats.length - 1) {
+            info += 'and ' + cats[i] + '.';
+        } else {
+            info += cats[i] + ', ';
+        }
+    }
+
+    para.textContent = info;
+
+    cats.forEach(function (cat, i) {
+        console.log(i, cat);
+    })
+
+    const o = {
+        name: 'Dani',
+        age: 22,
+    }
+
+    const myEntries = Object.entries(o);
+    console.log(myEntries);
+
+    myEntries.forEach(function (entry) {
+        const [key, value] = entry;
+
+        console.log(key, value);
+    })
+
+    for (let cat of cats) {
+        console.log(cat);
+    }
+
+</script>
