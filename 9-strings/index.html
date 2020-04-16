@@ -1,0 +1,53 @@
+<script>
+    // Creating a string
+    let string = 'The revolution will not be televised.';
+    console.log(string);
+
+    // Single quotes vs. double quotes
+    let string2 = "The revolution will not be televised.";
+    let string3 = 'Would you eat a "fish supper"?';
+    let string4 = "I'm feeling blue.";
+
+    console.log(string2);
+    console.log(string3);
+    console.log(string4);
+
+    // Escaping characters in a string
+    let string5 = 'I\'ve got no right to take my place...';
+    console.log(string5);
+
+    // Concatenating strings
+    let string6 = 'hello' + 'world';
+    console.log(string6);
+
+    const name = 'Gil';
+    console.log('Hello ' + name + ', nice to see you!');
+
+    // Numbers vs. strings
+    console.log(15 + '12');
+    console.log('front' + 12);
+
+    // Template literals
+    let song = 'Fight the Youth';
+    let score = 9;
+    let highestScore = 10;
+    let output = 'I like the song "' + song + '". I gave it a score of ' + (score/highestScore * 100) + '%.';
+    console.log(output);
+
+    output = `I like the song "${song}". I gave it a score of ${score/highestScore * 100}%.`;
+    console.log(output);
+
+    output = 'I like the song "' + song + '".\nI gave it a score of ' + (score/highestScore * 100) + '%.';
+    console.log(output);
+
+    output = `I like the song "${song}".
+I gave it a score of ${score/highestScore * 100}%.`;
+    console.log(output);
+
+    // methods
+    console.log('length', string.length);
+    console.log('split', string.split(' '));
+    console.log('access', string[2]);
+    console.log('replace', string.replace('e', 'X'));
+    console.log('uppercase', string.toUpperCase());
+</script>
