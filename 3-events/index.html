@@ -19,11 +19,12 @@
 
     const myHtml = document.querySelector('html');
 
-    myHtml.onclick = function() {
-        alert('Ouch! Stop poking me!');
+    myHtml.onclick = function(event) {
+        console.log('Ouch! Stop poking me!');
+        console.log(event);
     };
 
-    myHtml.style.background = 'red';
+    // myHtml.style.background = 'red';
 </script>
 </body>
 </html>

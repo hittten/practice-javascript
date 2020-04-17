@@ -1,0 +1,11 @@
+<input type="text">
+<script>
+    // https://developer.mozilla.org/es/docs/Web/Events
+    document.querySelector('input')
+        .addEventListener('keyup', function (e) {
+            console.log(e);
+            if (e.key === 'Enter') {
+                console.log('has presionado enter');
+            }
+        });
+</script>
