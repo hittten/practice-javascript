@@ -1,0 +1,20 @@
+<script>
+    function multiply(a, b = 1) {
+        return a * b;
+    }
+
+    console.log(multiply(5, 2));
+    // expected output: 10
+
+    console.log(multiply(5));
+    // expected output: 5
+
+    // multiple params
+    function log2(...params) {
+        for (let param of params) {
+            console.log(param);
+        }
+    }
+
+    console.log(log2(1,2,3,4));
+</script>

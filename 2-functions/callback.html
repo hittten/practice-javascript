@@ -1,0 +1,24 @@
+<script>
+    // foreach example
+    function myForEach(array, callbackFunction) {
+        for (let i = 0; i < array.length; i++) {
+            callbackFunction(array[i], i);
+        }
+    }
+
+    const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+
+    myForEach(cats, function (value, index) {
+        console.log(index, value);
+    })
+
+    Array.prototype.myForEach = function (callbackFunction) {
+        for (let i = 0; i < this.length; i++) {
+            callbackFunction(this[i], i);
+        }
+    }
+
+    cats.myForEach(function (value) {
+        console.log(value);
+    })
+</script>
