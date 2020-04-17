@@ -1,0 +1,33 @@
+<script>
+    const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+
+    let i = 0;
+    let info = '';
+
+    while (i < cats.length) {
+        if (i === cats.length - 1) {
+            info += 'and ' + cats[i] + '.';
+        } else {
+            info += cats[i] + ', ';
+        }
+
+        i++;
+    }
+
+    console.log(info);
+
+    info = '';
+    i = 0;
+
+    do {
+        if (i === cats.length - 1) {
+            info += 'and ' + cats[i] + '.';
+        } else {
+            info += cats[i] + ', ';
+        }
+
+        i++;
+    } while (i < cats.length);
+
+    console.log(info);
+</script>
