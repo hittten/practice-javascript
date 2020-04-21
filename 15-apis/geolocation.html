@@ -1,0 +1,15 @@
+<button>Location</button>
+<script>
+    console.log('init');
+
+    const button = document.querySelector('button');
+
+    function getPosition () {
+        console.log('getting position...');
+        navigator.geolocation.getCurrentPosition(console.log, console.log);
+    }
+    getPosition();
+
+    button.onclick = getPosition;
+    console.log('end');
+</script>

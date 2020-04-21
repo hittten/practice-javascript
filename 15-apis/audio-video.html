@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>camara</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        video {
+            display: block;
+            margin: 0 auto;
+        }
+
+        button {
+            margin: 10px;
+            padding: 5px 10px;
+            color: white;
+            background: blue;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <video></video>
+    <button>Take picture</button>
+    <div></div>
+    <script>
+        const [video, button, pictures] = document.querySelectorAll('video, button, div');
+
+        constraints = { audio: false, video: { width: 640, height: 420 } };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then(function (mediaStream) {
+                video.srcObject = mediaStream;
+                video.onloadedmetadata = function (e) {
+                    video.play();
+                };
+            })
+            .catch(function (err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+
+        button.onclick = () => {
+            const picture = document.createElement('canvas');
+            picture.width = 320;
+            picture.height = 240;
+            context = picture.getContext('2d');
+            context.drawImage(video, 0, 0, picture.width,  picture.height);
+
+            pictures.appendChild(picture);
+        }
+    </script>
+</body>
+
+</html>
