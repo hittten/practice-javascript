@@ -1,0 +1,29 @@
+<img src="spinner.svg" alt="loading">
+<script>
+    console.log('init');
+
+    const img = document.querySelector('img');
+    setTimeout(() => {
+        const response = fetch('sample.json');
+
+        response.then(function (data) {
+            const json = data.json();
+
+            json.then(function (jsonData) {
+                console.log(jsonData);
+                img.remove();
+            });
+        });
+    }, 500);
+
+    fetch('sample.json')
+        .then(res => {
+            console.log(res.status);
+            return res.json();
+        })
+        .then(json => console.log(json))
+        .catch(error => console.log('ha ocurrido algo', error))
+        .finally(() => console.log('done!'));
+
+    console.log('fin');
+</script>

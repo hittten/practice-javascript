@@ -1,0 +1,17 @@
+<img src="spinner.svg" alt="loading">
+<script>
+    const img = document.querySelector('img');
+    const nativeFetch = fetch;
+
+    fetch = (...params) => new Promise(resolve => {
+        setTimeout(() => resolve(nativeFetch(...params)), 500);
+    });
+
+    fetch('sample.json')
+        .then(data => data.json())
+        .then(data => {
+            console.log(data);
+            img.remove()
+        });
+
+</script>

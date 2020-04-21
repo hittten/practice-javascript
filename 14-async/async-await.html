@@ -1,0 +1,19 @@
+<script>
+    fetch('sample.json')
+        .then(res => {
+            console.log(res.status);
+            return res.json();
+        })
+        .then(jsonData => console.log(jsonData));
+
+    async function main() {
+        const res = await fetch('sample.json');
+        console.log(res.status);
+        const jsonData = await res.json();
+        console.log(jsonData);
+
+        return jsonData;
+    }
+
+    main().then(data => console.log(data));
+</script>

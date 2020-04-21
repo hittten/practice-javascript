@@ -1,0 +1,29 @@
+<img src="spinner.svg" alt="loading">
+<script>
+    // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
+    console.log('init');
+    async function main() {
+        console.log('init main');
+
+        const img = document.querySelector('img');
+        const a = fetch('coffee.jpg');
+        const b = fetch('tea.jpg');
+
+        // same time
+        const values = await Promise.all([a, b]);
+        console.log('coffe and tea done', values);
+
+        // one after other
+        await fetch('sampleaas.json');
+        console.log('sample.json done');
+        await fetch('sample2.json');
+        img.remove();
+        console.log('sample2.json done');
+
+        console.log('end main');
+    }
+
+    main().then(()=>console.log('async done!!'));
+
+    console.log('end');
+</script>

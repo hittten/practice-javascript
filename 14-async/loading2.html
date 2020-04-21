@@ -1,0 +1,19 @@
+<img src="spinner.svg" alt="loading">
+<script>
+    const img = document.querySelector('img');
+    const request = (url) => new Promise(resolve => {
+        setTimeout(() => {
+            fetch(url).then(resolve);
+        }, 500);
+    });
+
+    
+
+    request('sample.json')
+        .then(data => data.json())
+        .then(data => {
+            console.log(data);
+            img.remove()
+        });
+
+</script>

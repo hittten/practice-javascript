@@ -1,0 +1,26 @@
+<img src="spinner.svg" alt="loading">
+<script>
+    console.log('init');
+
+    const img = document.querySelector('img');
+    const a = fetch('coffee.jpg');
+    const b = fetch('tea.jpg');
+
+    // same time
+    Promise.all([a, b]).then(values => {
+        console.log('coffe and tea done', values);
+
+        // one after other
+        fetch('sample.json')
+            .then(() => {
+                console.log('sample.json done');
+                return fetch('sample2.json');
+            })
+            .then(() => {
+                img.remove();
+                console.log('sample2.json done');
+            });
+    });
+
+    console.log('end');
+</script>
