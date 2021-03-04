@@ -10,6 +10,15 @@
     // expected output: 5
 
     // multiple params
+    function log1() {
+        for (let arg of arguments) {
+            console.log(arg);
+        }
+    }
+
+    console.log(log1(1,2,3,4));
+
+    // multiple params ES6
     function log2(...params) {
         for (let param of params) {
             console.log(param);

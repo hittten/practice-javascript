@@ -1,0 +1,25 @@
+<script>
+    let shopping = ['bread', 'milk', 'cheese', 'hummus', 'noodles'];
+
+    let shoppingRef = shopping;
+    let shoppingCopy = Object.assign([], shopping);
+    let shoppingCopyES6 = [...shopping];
+
+    // Mutable
+    console.log('before splice shopping:', shopping);
+    shopping.splice(2, 3);
+    console.log('after splice shopping:', shopping);
+    console.log('after splice shoppingRef:', shoppingRef);
+    console.log('after splice shoppingCopy:', shoppingCopy);
+    console.log('after splice shoppingCopyES6:', shoppingCopyES6);
+
+    // Immutable
+    shopping = ['bread', 'milk', 'cheese', 'hummus', 'noodles'];
+    console.log('before splice shopping:', shopping);
+    shopping.slice(2, 3);
+    console.log('after slice shopping:', shopping);
+    console.log('after slice shoppingRef:', shoppingRef);
+    console.log('after slice shoppingCopy:', shoppingCopy);
+    console.log('after slice shoppingCopyES6:', shoppingCopyES6);
+
+</script>

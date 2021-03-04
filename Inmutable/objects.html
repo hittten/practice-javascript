@@ -1,0 +1,23 @@
+<script>
+    const person = {
+        name: {
+            first: 'Bob',
+            last: 'Smith'
+        },
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing']
+    };
+
+    const personRef = person;
+    const personCopy = {...person}
+    personCopy.name = {...person.name}
+
+    let nestedObject = {
+        name: 'John',
+        favoriteColors: ['red', 'black'],
+        shopping : shoppingRef,
+    }
+    let nestedObjectCopy = {...nestedObject};
+    console.log(nestedObject)
+</script>
