@@ -2,22 +2,39 @@
     const person = {
         name: {
             first: 'Bob',
-            last: 'Smith'
+            last: 'Smith',
+            other: {
+                ot1: 'ot1'
+            },
         },
         age: 32,
         gender: 'male',
-        interests: ['music', 'skiing']
+        interests: ['music', 'skiing', {a: 1, b: 2}],
     };
 
     const personRef = person;
-    const personCopy = {...person}
-    personCopy.name = {...person.name}
+    const personCopy = Object.assign({}, person);
+    const personCopy2 = {...person};
 
-    let nestedObject = {
-        name: 'John',
-        favoriteColors: ['red', 'black'],
-        shopping : shoppingRef,
-    }
-    let nestedObjectCopy = {...nestedObject};
-    console.log(nestedObject)
+    // personCopy.name = Object.assign({}, person.name);
+    // personCopy2.name = {...person.name};
+
+    person.age = 20;
+    person.name.first = 'gil';
+    person.interests[2].a = 'changed!!!';
+    person.name.other.ot1 = 'changed!!!';
+
+    console.log('person', person)
+    console.log('personRef', personRef)
+    console.log('personCopy', personCopy)
+    console.log('personCopy2', personCopy2)
+    console.log('person.name.other.ot1', person.name.other.ot1)
+    console.log('personRef.name.other.ot1', personRef.name.other.ot1)
+    console.log('personCopy.name.other.ot1', personCopy.name.other.ot1)
+    console.log('personCopy2.name.other.ot1', personCopy2.name.other.ot1)
+    console.log('person.interests[2].a', person.interests[2].a)
+    console.log('personRef.interests[2].a', personRef.interests[2].a)
+    console.log('personCopy.interests[2].a', personCopy.interests[2].a)
+    console.log('personCopy2.interests[2].a', personCopy2.interests[2].a)
+
 </script>
