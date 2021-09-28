@@ -14,28 +14,51 @@
 
     const personRef = person;
     const personCopy = Object.assign({}, person);
-    const personCopy2 = {...person};
+    const personES6Copy = {...person};
+    const personDeepCopy = deepCopy(person);
 
     // personCopy.name = Object.assign({}, person.name);
-    // personCopy2.name = {...person.name};
+    // personES6Copy.name = {...person.name};
 
-    person.age = 20;
-    person.name.first = 'gil';
+    person.age = 1000;
+    person.name.first = 'changed!!!';
     person.interests[2].a = 'changed!!!';
     person.name.other.ot1 = 'changed!!!';
 
     console.log('person', person)
     console.log('personRef', personRef)
     console.log('personCopy', personCopy)
-    console.log('personCopy2', personCopy2)
+    console.log('personES6Copy', personES6Copy)
+    console.log('personDeepCopy', personDeepCopy)
+
+    console.log('person.name.first', person.name.first)
+    console.log('personRef.name.first', personRef.name.first)
+    console.log('personCopy.name.first', personCopy.name.first)
+    console.log('personES6Copy.name.first', personES6Copy.name.first)
+    console.log('personDeepCopy.name.first', personDeepCopy.name.first)
+
     console.log('person.name.other.ot1', person.name.other.ot1)
     console.log('personRef.name.other.ot1', personRef.name.other.ot1)
     console.log('personCopy.name.other.ot1', personCopy.name.other.ot1)
-    console.log('personCopy2.name.other.ot1', personCopy2.name.other.ot1)
+    console.log('personES6Copy.name.other.ot1', personES6Copy.name.other.ot1)
+    console.log('personDeepCopy.name.other.ot1', personDeepCopy.name.other.ot1)
+
     console.log('person.interests[2].a', person.interests[2].a)
     console.log('personRef.interests[2].a', personRef.interests[2].a)
     console.log('personCopy.interests[2].a', personCopy.interests[2].a)
-    console.log('personCopy2.interests[2].a', personCopy2.interests[2].a)
+    console.log('personES6Copy.interests[2].a', personES6Copy.interests[2].a)
+    console.log('personDeepCopy.interests[2].a', personDeepCopy.interests[2].a)
 
-    // TODO: make a recursive function for clone
+
+    function deepCopy(obj) {
+        const r = Array.isArray(obj) ? [...obj] : {...obj}
+
+        for (const [key, value] of Object.entries(obj)) {
+            if (typeof value === 'object') {
+                r[key] = deepCopy(value);
+            }
+        }
+
+        return r;
+    }
 </script>
