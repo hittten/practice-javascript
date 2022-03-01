@@ -4,10 +4,8 @@
     const request = (url) => new Promise(resolve => {
         setTimeout(() => {
             fetch(url).then(resolve);
-        }, 500);
+        }, 2000);
     });
-
-    
 
     request('sample.json')
         .then(data => data.json())
@@ -15,5 +13,23 @@
             console.log(data);
             img.remove()
         });
+
+    function myNumberPromise(number) {
+        return new Promise(function (resolve, reject) {
+            if (number < 0) {
+                reject('No están permitidos los negativos');
+            } else {
+                resolve(number);
+            }
+        })
+    }
+
+    myNumberPromise(-12)
+        .then(function (value) {
+            console.log(value);
+        })
+        .catch(function (e){
+            console.error(e)
+        })
 
 </script>

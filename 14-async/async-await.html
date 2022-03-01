@@ -1,19 +1,54 @@
 <script>
+    // Native promises
     fetch('sample.json')
         .then(res => {
             console.log(res.status);
             return res.json();
         })
-        .then(jsonData => console.log(jsonData));
+        .then(jsonData => console.log("with fetch", jsonData));
 
-    async function main() {
-        const res = await fetch('sample.json');
-        console.log(res.status);
-        const jsonData = await res.json();
-        console.log(jsonData);
-
-        return jsonData;
+    // Custom promise
+    function myPro(n) {
+        return new Promise((resolve, reject) => {
+            if (n === 1) {
+                resolve('OK!')
+            } else {
+                reject('Only accept 1')
+            }
+        });
     }
 
-    main().then(data => console.log(data));
+    // Custom promise with async function await
+    async function myPro2(n) {
+        if (n === 1) {
+            return "OK!"
+        } else {
+            throw new Error("Only accept 1")
+        }
+    }
+
+    // Main
+    async function main() {
+        const res = await fetch('sample.json');
+        console.log("await fetch('sample.json') status:", res.status);
+
+        const jsonData = await res.json();
+        console.log("await fetch('sample.json') JSON:", jsonData);
+
+        console.log('fetching myPro...')
+        myPro(2)
+            .then((text) => console.log("myPro then result:",text))
+            .catch((error) => console.error("myPro catch result:",error))
+
+        console.log('fetching myPro2...')
+        myPro2(2)
+            .then((text) => console.log("myPro2 then result:",text))
+            .catch((error) => console.error("myPro catch result:",error))
+
+        return "done";
+    }
+
+    main()
+        .then(console.log)
+        .catch(console.error);
 </script>

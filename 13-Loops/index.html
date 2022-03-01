@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Loops: Task 1</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css"/>
+</head>
+
+<body>
+<div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque error eveniet explicabo illo, libero
+        nesciunt nobis omnis placeat, quae quod reiciendis rerum voluptas! Deleniti eius officiis similique voluptas
+        voluptatem!</p>
+</div>
+
+<section class="preview">
+
+
+</section>
+
+</body>
+<script>
+    let myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+    let list = document.createElement('ul');
+
+    // Add your code here
+
+
+    function otra() {
+        console.log('otra cosa');
+    }
+
+    (function () {
+        function otra() {
+            console.log('otra cosa');
+        }
+
+        otra();
+    })();
+
+    otra();
+    for (let string of myArray) {
+        list.innerHTML += `<li>${string}</li>`;
+    }
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    section.appendChild(list);
+</script>
+
+</html>
